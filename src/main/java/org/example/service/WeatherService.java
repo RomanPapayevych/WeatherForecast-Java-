@@ -40,8 +40,8 @@ public class WeatherService {
 
     public void printTable(List<WeatherResponse> forecasts){
         System.out.printf(
-                "%-12s | %-12s | %-16s | %-16s | %-12s | %-12s%n",
-                "City", "Date", "MinTemperature", "MaxTemperature", "Humidity", "Wind(kph)"
+                "%-12s | %-12s | %-16s | %-16s | %-12s | %-12s | %-12s%n",
+                "City", "Date", "MinTemperature", "MaxTemperature", "Humidity", "Wind(kph)", "WindDirection"
         );
 
         for(WeatherResponse data : forecasts){
@@ -49,13 +49,14 @@ public class WeatherService {
 
             Day day = tomorrow.day;
 
-            System.out.printf("%-12s | %-12s | %-16s | %-16s | %-12s | %-12s%n",
+            System.out.printf("%-12s | %-12s | %-16s | %-16s | %-12s | %-12s | %-12s%n",
                     data.location.name,
                     tomorrow.date,
                     day.minTemperature,
                     day.maxTemperature,
                     day.avgHumidity,
-                    day.maxWind
+                    day.maxWind,
+                    (day.windDirection != null ? day.windDirection : "-")
             );
         }
     }

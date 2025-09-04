@@ -10,11 +10,11 @@ public class Day {
     public double maxTemperature;
 
     @SerializedName("avghumidity")
-    public String avgHumidity;
+    public double avgHumidity;
 
     @SerializedName("maxwind_kph")
     public double maxWind;
 
-    //@SerializedName("wind_dir")
-    //public String windDirection;
+    @SerializedName("wind_dir")
+    public String windDirection;
 }
