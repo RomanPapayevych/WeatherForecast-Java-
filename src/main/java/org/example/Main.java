@@ -8,7 +8,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        final String apiKey = "a938a749600845649e7134952250309";
+        final String apiKey = "";
 
         List<String> cities = Arrays.asList("Chisinau", "Madrid", "Kyiv", "Amsterdam");
 
