@@ -1,5 +1,6 @@
-package org.example;
+package org.example.api;
 
+import org.example.model.weather.WeatherResponse;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.model.weather;
 
 public class WeatherResponse {
     public Location location;

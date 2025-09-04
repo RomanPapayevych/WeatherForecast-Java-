@@ -1,9 +1,10 @@
-package org.example;
+package org.example.client;
 
+import org.example.api.WeatherApiService;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class WeatherClient {
+public class WeatherApiClient {
     private static final String baseUrl = "https://api.weatherapi.com/v1/";
 
     public static WeatherApiService getClient() {

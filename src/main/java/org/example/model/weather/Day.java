@@ -1,4 +1,4 @@
-package org.example;
+package org.example.model.weather;
 
 import com.google.gson.annotations.SerializedName;
 
