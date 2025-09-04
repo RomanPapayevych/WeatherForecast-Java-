@@ -14,8 +14,14 @@ public class Main {
 
         WeatherService service = new WeatherService();
 
-        List<WeatherResponse> forecasts = service.getForecast(apiKey, cities);
+        try{
+            List<WeatherResponse> forecasts = service.getForecast(apiKey, cities);
 
-        service.printTable(forecasts);
+            service.printTable(forecasts);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Configuration error: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Network/API error: " + e.getMessage());
+        }
     }
 }
