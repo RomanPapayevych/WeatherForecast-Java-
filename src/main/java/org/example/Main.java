@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.api.WeatherApiService;
+import org.example.client.WeatherApiClient;
 import org.example.model.weather.WeatherResponse;
 import org.example.service.WeatherService;
 import java.util.Arrays;
@@ -12,7 +14,8 @@ public class Main {
 
         List<String> cities = Arrays.asList("Chisinau", "Madrid", "Kyiv", "Amsterdam");
 
-        WeatherService service = new WeatherService();
+        WeatherApiService api = WeatherApiClient.getClient();
+        WeatherService service = new WeatherService(api);
 
         try{
             List<WeatherResponse> forecasts = service.getForecast(apiKey, cities);

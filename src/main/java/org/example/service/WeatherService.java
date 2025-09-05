@@ -1,7 +1,6 @@
 package org.example.service;
 
 import org.example.api.WeatherApiService;
-import org.example.client.WeatherApiClient;
 import org.example.model.weather.Day;
 import org.example.model.weather.ForecastDay;
 import org.example.model.weather.WeatherResponse;
@@ -12,10 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WeatherService {
-    private final WeatherApiService api;
+    private final WeatherApiService _api;
 
-    public WeatherService() {
-        this.api = WeatherApiClient.getClient();
+    public WeatherService(WeatherApiService api) {
+        _api = api;
     }
 
     public List<WeatherResponse> getForecast(String apiKey, List<String> cities) throws IOException {
@@ -26,7 +25,7 @@ public class WeatherService {
         }
 
         for(String city : cities){
-            Call<WeatherResponse> call = api.getWeatherForecast(apiKey, city, 2);
+            Call<WeatherResponse> call = _api.getWeatherForecast(apiKey, city, 2);
 
             Response<WeatherResponse> response = call.execute();
 
